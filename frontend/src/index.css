@@ -1,0 +1,364 @@
+@import "tailwindcss";
+
+/* ================================
+   Base
+================================ */
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  background: #020617;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* ================================
+   LIGHT MODE
+   ================================ */
+
+html.light {
+  background: #f8fafc;
+  color-scheme: light;
+}
+
+/* Main page backgrounds */
+html.light .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-slate-950\/80 {
+  background-color: rgb(248 250 252 / 0.8) !important;
+}
+
+html.light .bg-slate-950\/60 {
+  background-color: rgb(241 245 249 / 0.8) !important;
+}
+
+html.light .bg-slate-950\/50 {
+  background-color: rgb(241 245 249 / 0.7) !important;
+}
+
+html.light .bg-slate-950\/40 {
+  background-color: rgb(241 245 249 / 0.6) !important;
+}
+
+/* Cards / sections */
+html.light .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-slate-900\/60 {
+  background-color: rgb(255 255 255 / 0.9) !important;
+}
+
+html.light .bg-slate-900\/50 {
+  background-color: rgb(255 255 255 / 0.85) !important;
+}
+
+html.light .bg-slate-900\/40 {
+  background-color: rgb(255 255 255 / 0.75) !important;
+}
+
+html.light .bg-slate-900\/70 {
+  background-color: rgb(241 245 249 / 0.9) !important;
+}
+
+/* Borders */
+html.light .border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .border-slate-800\/80 {
+  border-color: rgb(226 232 240 / 0.8) !important;
+}
+
+html.light .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Text */
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.light .text-slate-600 {
+  color: #475569 !important;
+}
+
+/* Hover states */
+html.light .hover\:bg-slate-800:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .hover\:bg-slate-800\/60:hover {
+  background-color: rgb(241 245 249 / 0.8) !important;
+}
+
+html.light .hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+/* Inputs */
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Header */
+html.light header {
+  background-color: rgb(255 255 255 / 0.9) !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Sidebar */
+html.light aside {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Buttons */
+html.light .bg-blue-600 {
+  color: white !important;
+}
+
+html.light .text-blue-400 {
+  color: #2563eb !important;
+}
+
+html.light .text-blue-300 {
+  color: #2563eb !important;
+}
+
+/* Shadows */
+html.light .shadow-black\/10 {
+  --tw-shadow-color: rgb(15 23 42 / 0.08);
+}
+
+/* ================================
+   Existing Vite starter styles
+================================ */
+
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+}
+
+.counter:hover {
+  border-color: var(--accent-border);
+}
+
+.counter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .base,
+.hero .framework,
+.hero .vite {
+  inset-inline: 0;
+  margin: 0 auto;
+}
+
+.hero .base {
+  width: 170px;
+  position: relative;
+  z-index: 0;
+}
+
+.hero .framework,
+.hero .vite {
+  position: absolute;
+}
+
+.hero .framework {
+  z-index: 1;
+  top: 34px;
+  height: 28px;
+  transform: perspective(2000px) rotateZ(300deg) rotateX(44deg)
+    rotateY(39deg) scale(1.4);
+}
+
+.hero .vite {
+  z-index: 0;
+  top: 107px;
+  height: 26px;
+  width: auto;
+  transform: perspective(2000px) rotateZ(300deg) rotateX(40deg)
+    rotateY(39deg) scale(0.8);
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+}
+
+#next-steps > div {
+  flex: 1 1 0;
+  padding: 32px;
+}
+
+#next-steps .icon {
+  margin-bottom: 16px;
+  width: 22px;
+  height: 22px;
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+}
+
+#next-steps ul .logo {
+  height: 18px;
+}
+
+#next-steps ul a {
+  color: var(--text-h);
+  font-size: 16px;
+  border-radius: 6px;
+  background: var(--social-bg);
+  display: flex;
+  padding: 6px 12px;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: box-shadow 0.3s;
+}
+
+#next-steps ul a:hover {
+  box-shadow: var(--shadow);
+}
+
+#next-steps ul a .button-icon {
+  height: 18px;
+  width: 18px;
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+}
+
+.ticks::before,
+.ticks::after {
+  content: "";
+  position: absolute;
+  top: -4.5px;
+  border: 5px solid transparent;
+}
+
+.ticks::before {
+  left: 0;
+  border-left-color: var(--border);
+}
+
+.ticks::after {
+  right: 0;
+  border-right-color: var(--border);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  #center {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+
+  #next-steps {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #next-steps > div {
+    padding: 24px 20px;
+  }
+
+  #docs {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #next-steps ul {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #next-steps ul li {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  #next-steps ul a {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  #spacer {
+    height: 48px;
+  }
+}
