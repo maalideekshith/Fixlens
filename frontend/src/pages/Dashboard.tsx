@@ -111,7 +111,8 @@ export default function Dashboard() {
                   </div>
 
                   <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                    👋 Welcome back, Test User
+                    👋 Welcome back,{" "}
+                   {localStorage.getItem("user_name") || "User"}
                   </h1>
 
                   <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">

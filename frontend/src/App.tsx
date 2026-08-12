@@ -7,7 +7,6 @@ import Bugs from "./pages/Bugs";
 import BugDetails from "./pages/BugDetails";
 import CreateBugForm from "./components/bugs/CreateBugForm";
 import Settings from "./pages/Settings";
-import { ThemeProvider } from "./context/ThemeContext";
 function App() {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "dark";

@@ -343,7 +343,7 @@ export default function BugDetails() {
               <InfoCard title="Uploaded Screenshot">
                 <div className="overflow-hidden rounded-lg border border-slate-800 bg-slate-950">
                   <img
-                    src={`http://127.0.0.1:8000${bug.screenshot_url}`}
+                    src={`${import.meta.env.VITE_API_URL}${bug.screenshot_url}`}
                     alt="Bug screenshot"
                     className="max-h-[550px] w-full object-contain"
                   />

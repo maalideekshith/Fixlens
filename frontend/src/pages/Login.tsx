@@ -24,7 +24,16 @@ export default function Login() {
 
       localStorage.setItem("token", response.data.access_token);
 
-      navigate("/dashboard");
+const userResponse = await api.get("/auth/me", {
+  headers: {
+    Authorization: `Bearer ${response.data.access_token}`,
+  },
+});
+
+localStorage.setItem("user_name", userResponse.data.name);
+localStorage.setItem("user_email", userResponse.data.email);
+
+navigate("/dashboard");
     } catch (error) {
       setError("Invalid email or password.");
     } finally {
