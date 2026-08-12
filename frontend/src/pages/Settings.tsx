@@ -5,11 +5,11 @@ export default function Settings() {
   const navigate = useNavigate();
 
   const [name, setName] = useState(
-    localStorage.getItem("user_name") || "Test User",
+    localStorage.getItem("user_name") || "User",
   );
 
   const [email] = useState(
-    localStorage.getItem("user_email") || "testuser@gmail.com",
+    localStorage.getItem("user_email") || "No email",
   );
 
   const [editName, setEditName] = useState(name);

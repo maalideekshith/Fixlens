@@ -2,15 +2,16 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import text
 from sqlalchemy.orm import Session
+from fastapi.middleware.cors import CORSMiddleware
 
-from app.services.ai_service import analyze_bug
 from app.db.database import Base, engine, get_db
 from app.db import models
 from app.routers.auth import router as auth_router
 from app.routers.bugs import router as bugs_router
 from app.core.security import get_current_user
 from app.db.models import Bug, User
-from fastapi.middleware.cors import CORSMiddleware
+from app.services.ai_service import analyze_bug
+
 
 Base.metadata.create_all(bind=engine)
 
@@ -20,22 +21,27 @@ app = FastAPI(
     description="AI-powered bug reporting platform",
     version="1.0.0",
 )
+
+
 app.mount(
     "/uploads",
     StaticFiles(directory="uploads"),
     name="uploads",
 )
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://fixlens-one.vercel.app",
-],
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://fixlens-one.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(auth_router)
 app.include_router(bugs_router)
@@ -65,23 +71,6 @@ def health_check():
             "database": "disconnected",
             "error": str(error),
         }
-
-
-@app.get("/ai/test")
-async def test_ai():
-    result = await analyze_bug(
-        title="Login button not working",
-        description="The login button does nothing after valid credentials are entered.",
-        expected_behavior="User should be logged in.",
-        actual_behavior="Nothing happens after clicking Login.",
-        steps_to_reproduce=(
-            "Open login page, enter valid credentials, click Login."
-        ),
-    )
-
-    return {
-        "analysis": result
-    }
 
 
 @app.post("/bugs/{bug_id}/analyze")
