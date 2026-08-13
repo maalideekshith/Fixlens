@@ -39,7 +39,7 @@ Built for developers who want a faster and smarter way to manage software issues
 
 [![FixLens Bugs](https://raw.githubusercontent.com/maalideekshith/Fixlens/main/screenshots/Bugs_Screenshot.png)](https://github.com/maalideekshith/Fixlens/blob/main/screenshots/Bugs_Screenshot.png)
 
-### 📋 Bug Details and AI Bug Details
+### 📋 Bug Details and AI Bug Analysis
 
 [![FixLens Bug Details](https://raw.githubusercontent.com/maalideekshith/Fixlens/main/screenshots/BugDetails1_Screenshoot.png)](https://github.com/maalideekshith/Fixlens/blob/main/screenshots/BugDetails1_Screenshoot.png)
 
@@ -275,6 +275,8 @@ The following values should remain private:
 Built and maintained with ❤️ by **Maali Deekshith**
 
 🎓 Computer Science Engineering Student
+
+🔗 **LinkedIn:** [Maali Deekshith](https://www.linkedin.com/in/maali-deekshith-b27b992ab/)
 
 🔗 **GitHub:** [@maalideekshith](https://github.com/maalideekshith)
 
